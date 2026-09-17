@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="doit_announcement" engine="innodb" comment="Announcement Table">
+        <column xsi:type="int" name="announcement_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Announcement ID"/>
+        <column xsi:type="varchar" name="title" comment="Announcement Title" nullable="false"/>
+        <column xsi:type="text" name="content" comment="Announcement Content" nullable="false"/>
+        <column xsi:type="boolean" name="status" comment="Status" nullable="false" default="true"/>
+        <column xsi:type="datetime" name="start_date" comment="Start Date" nullable="true"/>
+        <column xsi:type="datetime" name="end_date" comment="End Date" nullable="true"/>
+        <column xsi:type="int" name="sort_order" comment="Sort Order" default="0" nullable="false"/>
+        <column xsi:type="datetime" name="created_at" comment="Date Created" nullable="false"/>
+        <column xsi:type="datetime" name="updated_at" comment="Date Updated" nullable="false"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="announcement_id"/>
+        </constraint>
+    </table>
+</schema>
