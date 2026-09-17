@@ -28,5 +28,8 @@ app/code/Doit/Announcement
 Then run:
 
 php bin/magento module:enable Doit_Announcement
+
 php bin/magento setup:upgrade
+
 php bin/magento cache:clean
+
