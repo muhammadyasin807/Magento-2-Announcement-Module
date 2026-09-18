@@ -3,9 +3,11 @@
     <body>
             <referenceContainer  name="content">
                 <!-- Magento\Backend\Block\Template -->
-                <block class="Doit\Announcement\Block\Adminhtml\Announcement"
+                <!--<block class="Doit\Announcement\Block\Adminhtml\Announcement"
                        name="doit.announcement.admin"
-                       template="Doit_Announcement::announcement.phtml" />
+                       template="Doit_Announcement::announcement.phtml" />-->
+                <uiComponent name="doit_announcement_listing" />
+
             </referenceContainer >
     </body>
 </page>

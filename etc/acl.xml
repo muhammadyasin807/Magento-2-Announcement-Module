@@ -4,6 +4,15 @@
         <resources>
             <resource id="Magento_Backend::admin">
 
+            <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Doit_Announcement::config"
+                                      title="Announcement Configuration"
+                                      sortOrder="10"/>
+                        </resource>
+                    </resource>
+           </resource>
             <resource id="Doit_Announcement::announcement"
                               title="Announcements"
                               translate="title"
@@ -13,6 +22,16 @@
                               title="Manage Announcements"
                               translate="title"
                               sortOrder="10" />
+
+                <resource id="Doit_Announcement::save"
+                          title="Add/Edit Announcement"
+                          translate="title"
+                          sortOrder="20" />
+
+                <resource id="Doit_Announcement::delete"
+                          title="Delete Announcement"
+                          translate="title"
+                          sortOrder="30" />
             </resource>
             </resource>
         </resources>

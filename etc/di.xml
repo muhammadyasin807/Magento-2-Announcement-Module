@@ -9,4 +9,25 @@
     <preference
         for="Doit\Announcement\Api\Data\AnnouncementSearchResultsInterface"
         type="Doit\Announcement\Model\AnnouncementSearchResults"/>
+
+    <virtualType name="Doit\Announcement\Model\ResourceModel\Announcement\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">doit_announcement</argument>
+            <argument name="resourceModel" xsi:type="string">
+                Doit\Announcement\Model\ResourceModel\Announcement
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="doit_announcement_listing_data_source"
+                      xsi:type="string">
+                    Doit\Announcement\Model\ResourceModel\Announcement\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
 </config>

@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">
+                doit_announcement_form.doit_announcement_form_data_source
+            </item>
+        </item>
+
+        <item name="label"
+              xsi:type="string"
+              translate="true">
+            Announcement Information
+        </item>
+        <item name="template"
+              xsi:type="string">
+            templates/form/collapsible
+        </item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save"
+                    class="Doit\Announcement\Block\Adminhtml\Announcement\Edit\SaveButton"/>
+        </buttons>
+        <namespace>doit_announcement_form</namespace>
+        <dataScope>data</dataScope>
+
+        <deps>
+            <dep>
+                doit_announcement_form.doit_announcement_form_data_source
+            </dep>
+        </deps>
+    </settings>
+
+    <dataSource name="doit_announcement_form_data_source">
+
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component"
+                      xsi:type="string">
+                    Magento_Ui/js/form/provider
+                </item>
+            </item>
+        </argument>
+
+        <settings>
+            <submitUrl path="announcement/announcement/save"/>
+        </settings>
+
+        <dataProvider
+            class="Doit\Announcement\Ui\DataProvider\Announcement\Form\DataProvider"
+            name="doit_announcement_form_data_source">
+
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>announcement_id</primaryFieldName>
+            </settings>
+
+        </dataProvider>
+
+    </dataSource>
+
+    <fieldset name="general">
+    <settings>
+        <collapsible>false</collapsible>
+        <label translate="true">General Information</label>
+    </settings>
+
+    <field name="announcement_id"
+           formElement="input"
+           sortOrder="5">
+
+        <settings>
+            <dataType>number</dataType>
+            <dataScope>announcement_id</dataScope>
+            <visible>false</visible>
+        </settings>
+
+    </field>
+
+    <field name="title"
+           formElement="input"
+           sortOrder="10">
+
+        <settings>
+            <dataType>text</dataType>
+            <dataScope>title</dataScope>
+            <label translate="true">Title</label>
+
+            <validation>
+                <rule name="required-entry"
+                      xsi:type="boolean">
+                    true
+                </rule>
+            </validation>
+
+        </settings>
+
+    </field>
+   <field name="content"
+               formElement="textarea"
+               sortOrder="20">
+
+            <settings>
+                <dataType>text</dataType>
+                <dataScope>content</dataScope>
+                <label translate="true">Content</label>
+
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">
+                        true
+                    </rule>
+                </validation>
+            </settings>
+
+        </field>
+        <field name="status"
+               formElement="select"
+               sortOrder="30">
+
+            <settings>
+                <dataType>number</dataType>
+                <dataScope>status</dataScope>
+                <label translate="true">Status</label>
+            </settings>
+
+            <formElements>
+                <select>
+                    <settings>
+                        <options class="Doit\Announcement\Model\Source\Status"/>
+                    </settings>
+                </select>
+            </formElements>
+
+        </field>
+        <field name="start_date"
+               formElement="date"
+               sortOrder="40">
+
+
+
+            <settings>
+                <dataType>text</dataType>
+                <dataScope>start_date</dataScope>
+                <label translate="true">Start Date</label>
+            </settings>
+
+        </field>
+        <field name="end_date"
+               formElement="date"
+               sortOrder="50">
+
+
+
+            <settings>
+                <dataType>text</dataType>
+                <dataScope>end_date</dataScope>
+                <label translate="true">End Date</label>
+            </settings>
+
+        </field>
+        <field name="sort_order"
+               formElement="input"
+               sortOrder="60">
+
+            <settings>
+                <dataType>number</dataType>
+                <dataScope>sort_order</dataScope>
+                <label translate="true">Sort Order</label>
+
+                <validation>
+                    <rule name="validate-number" xsi:type="boolean">
+                        true
+                    </rule>
+                </validation>
+            </settings>
+
+        </field>
+</fieldset>
+
+
+
+    </form>
